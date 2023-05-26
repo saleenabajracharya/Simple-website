@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Results</title>
+</head>
+<body>
+  <div id="resultContainer"></div>
+
+  <script>
+    function getHighestAndLowestMarks(scores) {
+      const highestMark = Math.max(...scores);
+      const lowestMark = Math.min(...scores);
+      return { highest: highestMark, lowest: lowestMark };
+    }
+
+    function countPassedStudents(scores, passMark) {
+      let passedCount = 0;
+      for (let i = 0; i < scores.length; i++) {
+        if (scores[i] >= passMark) {
+          passedCount++;
+        }
+      }
+      return passedCount;
+    }
+
+    const testScores = [32, 76, 89, 45, 34, 30, 25, 90, 72, 22];
+    const passMark = 32;
+
+    const result = getHighestAndLowestMarks(testScores);
+    const passedCount = countPassedStudents(testScores, passMark);
+
+    const resultContainer = document.getElementById('resultContainer');
+    resultContainer.innerHTML = `Highest mark: ${result.highest}<br>`;
+    resultContainer.innerHTML += `Lowest mark: ${result.lowest}<br>`;
+    resultContainer.innerHTML += `Number of students passed: ${passedCount}`;
+    
+    // Taking input for a 2D array
+const rows = parseInt(prompt("Enter the number of rows: "));
+const cols = parseInt(prompt("Enter the number of columns: "));
+
+// Create an empty 2D array
+const array2D = [];
+
+// Input values for each element
+for (let i = 0; i < rows; i++) {
+  array2D[i] = [];
+  for (let j = 0; j < cols; j++) {
+    const element = parseInt(prompt(`Enter the element at position (${i}, ${j}): `));
+    array2D[i][j] = element;
+  }
+}
+
+// Print the 2D array
+for (let i = 0; i < rows; i++){
+for (let j = 0; j < cols; j++) { 
+  document.write( array2D[i][j]);
+}
+document.write("<br>")
+}
+ </script>
+</body>
+</html>
